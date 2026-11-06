@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>FINCHEAT // Финансовый чит-код для студентов и фрилансеров</title>
+  <meta name="description" content="Подбираем дебетовые карты с максимальным кэшбэком и бесплатные счета РКО для старта своего дела без скрытых комиссий." />
+
+  <!-- Подключение шрифтов: Space Grotesk / Unbounded для заголовков и Inter для интерфейса -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Подключение Tailwind CSS через CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Настройка темы Tailwind -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            graphite: '#0D0F12',
+            surface: '#14171C',
+            surfaceLight: '#1C2027',
+            lime: '#CCFF00',
+            limeDark: '#A8D400',
+            electric: '#7B61FF',
+            electricLight: '#9A85FF',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Unbounded', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'neo-lime': '4px 4px 0px 0px #CCFF00',
+            'neo-lime-lg': '6px 6px 0px 0px #CCFF00',
+            'neo-purple': '4px 4px 0px 0px #7B61FF',
+            'glow-lime': '0 0 30px -5px rgba(204, 255, 0, 0.35)',
+            'glow-purple': '0 0 35px -5px rgba(123, 97, 255, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Подключение иконок Lucide через CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Базовые настройки и кастомные стили в духе Neo-Brutalism + Bento Glass */
+    :root {
+      --bg-main: #0D0F12;
+      --accent-lime: #CCFF00;
+      --accent-purple: #7B61FF;
+    }
+
+    body {
+      background-color: #0D0F12;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #CCFF00;
+      selection-color: #0D0F12;
+    }
+
+    ::selection {
+      background: #CCFF00;
+      color: #0D0F12;
+    }
+
+    /* Фоновая сетка в стиле Linear/Bento */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Карточка матового стекла с тонкой неоновой обводкой */
+    .bento-card {
+      background: rgba(20, 23, 28, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(204, 255, 0, 0.45);
+    }
+
+    /* 3D-эффект наклона для карточек офферов */
+    .tilt-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Световой блик, следующий за курсором внутри карточки */
+    .tilt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(204, 255, 0, 0.08),
+        transparent 45%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .tilt-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Стилизация ползунков (Range Sliders) в стиле Neo-Brutalism */
+    input[type="range"].neo-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: #1C2027;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"].neo-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #CCFF00;
+      border: 2px solid #0D0F12;
+      box-shadow: 3px 3px 0px #7B61FF;
+      cursor: grab;
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input[type="range"].neo-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+      background: #d8ff33;
+      box-shadow: 4px 4px 0px #7B61FF;
+    }
+
+    input[type="range"].neo-slider::-webkit-slider-thumb:active {
+      cursor: grabbing;
+      transform: scale(0.96);
+    }
+
+    input[type="range"].neo-slider::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #CCFF00;
+      border: 2px solid #0D0F12;
+      box-shadow: 3px 3px 0px #7B61FF;
+      cursor: grab;
+      transition: transform 0.15s ease;
+    }
+
+    /* Плавное появление при скролле (IntersectionObserver) */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Бегущая строка / пульсация */
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.12); }
+    }
+
+    .animate-pulse-dot {
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+
+    /* Скрытие скроллбара для мобильных горизонтальных тегов */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-graphite text-white antialiased selection:bg-lime selection:text-graphite relative">
+
+  <!-- Декоративные фоновые неоновые свечения -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-electric/20 rounded-full blur-[130px]"></div>
+    <div class="absolute top-[28%] -right-36 w-96 h-96 bg-lime/10 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-10 left-1/3 w-80 h-80 bg-electric/15 rounded-full blur-[130px]"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-70"></div>
+  </div>
+
+  <!-- =========================================================================
+       1. ШАПКА (HEADER)
+  ========================================================================== -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-graphite/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <!-- Логотип -->
+      <a href="#" class="flex items-center gap-2.5 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-lime flex items-center justify-center text-graphite font-display font-black text-lg shadow-neo-purple group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
+          FC
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight block leading-none">
+            FIN<span class="text-lime">CHEAT</span>
+          </span>
+          <span class="font-mono text-[10px] text-zinc-400 tracking-widest uppercase block mt-0.5">
+            GEN-Z BANKING HUB
+          </span>
+        </div>
+      </a>
+
+      <!-- Навигационные ссылки (Десктоп) -->
+      <nav class="hidden md:flex items-center gap-1 bg-surface/90 border border-white/10 rounded-xl p-1.5">
+        <a href="#calculator" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+          <i data-lucide="sliders" class="w-4 h-4 text-lime"></i>
+          Калькулятор
+        </a>
+        <a href="#offers" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+          <i data-lucide="credit-card" class="w-4 h-4 text-electricLight"></i>
+          Карты и РКО
+        </a>
+        <a href="#faq" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+          <i data-lucide="Lightbulb" class="w-4 h-4 text-lime"></i>
+          Гайд и FAQ
+        </a>
+      </nav>
+
+      <!-- Правая часть: Статус + Кнопка быстрого перехода -->
+      <div class="flex items-center gap-2.5">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-white/10 text-xs font-mono text-zinc-300">
+          <span class="w-2 h-2 rounded-full bg-lime animate-pulse-dot"></span>
+          <span>Ноябрь 2026</span>
+        </div>
+        <a href="#offers" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-lime text-graphite font-bold text-xs sm:text-sm shadow-neo-purple hover:bg-limeDark active:translate-y-0.5 transition-all flex items-center gap-1.5">
+          <span>Топ-офферы</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12 pb-20 space-y-14 sm:space-y-24">
+
+    <!-- =========================================================================
+         HERO-БЛОК В СТИЛЕ BENTO GRID
+    ========================================================================== -->
+    <section class="reveal-on-scroll">
+      <!-- Интерактивные бейджи-статистика сверху -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-lime/40 text-xs sm:text-sm font-mono text-lime shadow-sm">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>Обновлено: ноябрь 2026</span>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-electric/50 text-xs sm:text-sm font-mono text-electricLight">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>Проверено 15+ банков РФ</span>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-white/10 text-xs sm:text-sm font-mono text-zinc-300">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-lime"></i>
+          <span>0 ₽ скрытых платежей</span>
+        </div>
+      </div>
+
+      <!-- Главная Bento-сетка Hero -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+        <!-- Левая главная карточка Hero (8 колонок) -->
+        <div class="lg:col-span-8 bento-card rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between border border-white/15">
+          <div class="absolute -right-12 -top-12 w-52 h-52 bg-electric/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="space-y-5 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-electric/20 border border-electric/40 text-electricLight text-xs font-mono uppercase tracking-wider">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              Для студентов, селлеров и фрилансеров 18–25
+            </div>
+
+            <h1 class="font-display font-black text-2xl sm:text-4xl lg:text-5xl leading-[1.12] tracking-tight">
+              Финансовый <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime via-white to-electricLight">чит-код</span> для студентов и фрилансеров
+            </h1>
+
+            <p class="text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+              Подбираем карты с максимальным кэшбэком и бесплатные счета для старта своего дела без скрытых комиссий. Никаких душных тарифов — только чистый профит.
+            </p>
+          </div>
+
+          <!-- Нижний ряд кнопок и микро-преимуществ -->
+          <div class="pt-8 mt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="#offers" class="w-full sm:w-auto justify-center px-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm sm:text-base shadow-neo-purple hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-2">
+                <span>Подобрать карту</span>
+                <i data-lucide="arrow-down-right" class="w-5 h-5 stroke-[2.5]"></i>
+              </a>
+              <a href="#calculator" class="w-full sm:w-auto justify-center px-5 py-3.5 rounded-2xl bg-surfaceLight hover:bg-white/10 text-white font-semibold text-sm sm:text-base border border-white/15 transition-all flex items-center gap-2">
+                <i data-lucide="calculator" class="w-4 h-4 text-lime"></i>
+                <span>Посчитать кэшбэк</span>
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs text-zinc-400 font-mono">
+              <div class="flex -space-x-2">
+                <span class="w-7 h-7 rounded-full bg-lime text-graphite font-bold flex items-center justify-center border-2 border-graphite text-[11px]">А</span>
+                <span class="w-7 h-7 rounded-full bg-electric text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">Т</span>
+                <span class="w-7 h-7 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">В</span>
+              </div>
+              <span>Оформление за 2 мин онлайн</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая Bento-колонка со статами и фичей комбо (4 колонки) -->
+        <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
+          <!-- Блок 1: Максимальный кэшбэк -->
+          <div class="bento-card rounded-3xl p-6 border border-lime/30 relative overflow-hidden flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider text-zinc-400">Комбо-стратегия</span>
+              <span class="px-2.5 py-1 rounded-md bg-lime/15 text-lime font-mono text-xs font-bold border border-lime/30">PRO HACK</span>
+            </div>
+            <div class="my-4">
+              <div class="font-display font-black text-3xl sm:text-4xl text-lime tracking-tight">до 30%</div>
+              <p class="text-sm text-zinc-300 mt-1">Кэшбэк рублями на фастфуд, маркетплейсы, доставку и такси при связке из 2–3 бесплатных карт.</p>
+            </div>
+            <button onclick="openComboModal()" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-lime hover:text-graphite border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Посмотреть схему связки</span>
+              <i data-lucide="layers" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Блок 2: Фриланс и РКО -->
+          <div class="bento-card rounded-3xl p-6 border border-electric/40 relative overflow-hidden flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider text-zinc-400">Старт без налоговой</span>
+              <span class="px-2.5 py-1 rounded-md bg-electric/20 text-electricLight font-mono text-xs font-bold border border-electric/40">ИП + РКО 0 ₽</span>
+            </div>
+            <div class="my-4">
+              <div class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">0 ₽ госпошлина</div>
+              <p class="text-sm text-zinc-300 mt-1">Банк сам выпустит КЭП и откроет ИП удаленно. Идеально для работы с заказчиками, WB и Ozon.</p>
+            </div>
+            <a href="#offers" onclick="switchCategory('rko')" class="w-full py-2.5 px-4 rounded-xl bg-electric/20 hover:bg-electric text-white border border-electric/40 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Открыть вкладку РКО</span>
+              <i data-lucide="briefcase" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         2. ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР ВЫГОДЫ (КИЛЛЕР-ФИЧА)
+    ========================================================================== -->
+    <section id="calculator" class="reveal-on-scroll scroll-mt-24">
+      <div class="bento-card rounded-3xl p-6 sm:p-10 border-2 border-white/15 relative overflow-hidden">
+        <!-- Декоративный градиент -->
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-lime/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Заголовок секции -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+          <div>
+            <div class="inline-flex items-center gap-2 text-lime font-mono text-xs uppercase tracking-widest mb-2">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              <span>Интерактивный симулятор выгоды</span>
+            </div>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">
+              Сколько денег ты теряешь без правильных карт?
+            </h2>
+          </div>
+          <p class="text-sm text-zinc-400 max-w-md">
+            Двигай ползунки под свои реальные расходы в месяц — алгоритм посчитает возврат рублями при использовании топ-карт из подборки.
+          </p>
+        </div>
+
+        <!-- Основная сетка калькулятора -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Левая часть: 2 ползунка + переключатели буста (7 колонок) -->
+          <div class="lg:col-span-7 space-y-7">
+
+            <!-- Ползунок 1: Супермаркеты и фастфуд -->
+            <div class="p-5 rounded-2xl bg-surfaceLight/70 border border-white/10 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <label for="spendFoodSlider" class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 flex items-center justify-center text-lime">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                  </span>
+                  <span>Траты в супермаркетах и фастфуде в месяц</span>
+                </label>
+                <div class="px-3.5 py-1.5 rounded-xl bg-graphite border border-lime/50 font-mono font-bold text-lime text-base sm:text-lg whitespace-nowrap" id="spendFoodDisplay">
+                  25 000 ₽
+                </div>
+              </div>
+
+              <input
+                id="spendFoodSlider"
+                type="range"
+                min="0"
+                max="100000"
+                step="1000"
+                value="25000"
+                class="neo-slider"
+                aria-label="Траты в супермаркетах и фастфуде в месяц"
+              />
+
+              <div class="flex justify-between text-[11px] font-mono text-zinc-400">
+                <span>0 ₽</span>
+                <span>25 000 ₽ (база)</span>
+                <span>50 000 ₽</span>
+                <span>100 000 ₽</span>
+              </div>
+            </div>
+
+            <!-- Ползунок 2: Переводы, подписки, маркетплейсы и такси -->
+            <div class="p-5 rounded-2xl bg-surfaceLight/70 border border-white/10 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <label for="spendSubsSlider" class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 flex items-center justify-center text-electricLight">
+                    <i data-lucide="smartphone" class="w-4 h-4"></i>
+                  </span>
+                  <span>Переводы / оплата подписок и сервисов</span>
+                </label>
+                <div class="px-3.5 py-1.5 rounded-xl bg-graphite border border-electric/50 font-mono font-bold text-electricLight text-base sm:text-lg whitespace-nowrap" id="spendSubsDisplay">
+                  10 000 ₽
+                </div>
+              </div>
+
+              <input
+                id="spendSubsSlider"
+                type="range"
+                min="0"
+                max="50000"
+                step="500"
+                value="10000"
+                class="neo-slider"
+                aria-label="Переводы и оплата подписок в месяц"
+              />
+
+              <div class="flex justify-between text-[11px] font-mono text-zinc-400">
+                <span>0 ₽</span>
+                <span>10 000 ₽</span>
+                <span>25 000 ₽</span>
+                <span>50 000 ₽</span>
+              </div>
+            </div>
+
+            <!-- Дополнительный интерактивный чекбокс «Связка из 2 карт» -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-graphite/70 border border-white/10">
+              <label class="flex items-center gap-3 cursor-pointer select-none">
+                <input type="checkbox" id="comboBoostToggle" checked class="sr-only peer" />
+                <div class="w-11 h-6 bg-surfaceLight peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-graphite after:rounded-full after:h-5 after:w-5 after:transition-all relative peer-checked:bg-lime border border-white/20"></div>
+                <div>
+                  <span class="text-sm font-bold text-white block">Режим «Связка 2–3 карт» (+Приветственные бонусы)</span>
+                  <span class="text-xs text-zinc-400">Комбинируем повышенные категории разных банков каждый месяц</span>
+                </div>
+              </label>
+              <span class="px-2.5 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold self-start sm:self-center whitespace-nowrap">
+                +2 500 ₽ старт-бонус
+              </span>
+            </div>
+          </div>
+
+          <!-- Правая часть: Результат с неоновой рамкой (5 колонок) -->
+          <div class="lg:col-span-5">
+            <div class="rounded-3xl bg-graphite border-2 border-lime p-6 sm:p-8 shadow-neo-purple relative overflow-hidden">
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-lg bg-lime text-graphite font-mono font-extrabold text-xs uppercase">
+                  Расчет в реальном времени
+                </span>
+                <span class="font-mono text-xs text-zinc-400" id="calcRateBadge">Эфф. возврат ~9.5%</span>
+              </div>
+
+              <p class="text-zinc-300 text-sm font-medium">
+                Твой потенциальный кэшбэк за год:
+              </p>
+
+              <!-- Главная цифра выгоды -->
+              <div class="my-3 font-display font-black text-3xl sm:text-5xl text-lime tracking-tight" id="yearlyCashbackOutput">
+                ~44 700 ₽
+              </div>
+
+              <!-- Разбивка по месяцам и бонусам -->
+              <div class="grid grid-cols-2 gap-3 my-6 pt-5 border-t border-white/10">
+                <div class="p-3 rounded-xl bg-surface border border-white/5">
+                  <span class="text-xs text-zinc-400 block">В среднем в месяц:</span>
+                  <span class="font-mono font-bold text-base sm:text-lg text-white mt-0.5 block" id="monthlyCashbackOutput">~3 725 ₽/мес</span>
+                </div>
+                <div class="p-3 rounded-xl bg-surface border border-white/5">
+                  <span class="text-xs text-zinc-400 block">Обслуживание карт:</span>
+                  <span class="font-mono font-bold text-base sm:text-lg text-lime mt-0.5 block">0 ₽ / год</span>
+                </div>
+              </div>
+
+              <!-- Кнопка скролла к подходящим картам -->
+              <a
+                href="#offers"
+                id="calcActionBtn"
+                onclick="highlightRecommendedCards()"
+                class="w-full py-4 px-5 rounded-2xl bg-lime hover:bg-limeDark text-graphite font-extrabold text-sm sm:text-base transition-all flex items-center justify-center gap-2 shadow-glow-lime group"
+              >
+                <span>Перейти к подходящим картам</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[2.5]"></i>
+              </a>
+
+              <p class="text-[11px] text-zinc-400 text-center mt-3 font-mono">
+                *Кэшбэк начисляется живыми рублями, а не фантиками
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. ПЕРЕКЛЮЧАТЕЛЬ КАТЕГОРИЙ (ТАБЫ + ТЕГИ) И 4. СЕТКА ОФФЕРОВ
+    ========================================================================== -->
+    <section id="offers" class="reveal-on-scroll scroll-mt-24 space-y-8">
+      <!-- Заголовок витрины -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-electricLight font-mono text-xs uppercase tracking-widest mb-2">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Рейтинг финансовых продуктов 2026</span>
+          </div>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl tracking-tight">
+            Выбери свой финансовый сетап
+          </h2>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-zinc-400">
+          <i data-lucide="mouse-pointer-click" class="w-4 h-4 text-lime"></i>
+          <span>Наведи на карточку для 3D-обзора</span>
+        </div>
+      </div>
+
+      <!-- Главные вкладки категорий (Дебетовые карты / Фриланс и РКО) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 p-2 rounded-3xl bg-surface border border-white/10">
+        <!-- Вкладка 1: Дебетовые карты -->
+        <button
+          id="tab-debit"
+          onclick="switchCategory('debit')"
+          class="tab-btn active-tab w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-lime text-graphite shadow-neo-purple"
+        >
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-graphite/15 flex items-center justify-center shrink-0">
+              <i data-lucide="credit-card" class="w-6 h-6 stroke-[2.2]"></i>
+            </div>
+            <div>
+              <div class="font-display font-bold text-sm sm:text-base leading-tight">
+                Дебетовые карты
+              </div>
+              <div class="text-xs opacity-80 font-medium mt-0.5">
+                Кэшбэк до 30% и 0 ₽ обслуживание навсегда
+              </div>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-lg bg-graphite text-lime font-mono text-xs font-bold shrink-0">
+            9 карт
+          </span>
+        </button>
+
+        <!-- Вкладка 2: Фриланс и Бизнес (ИП + РКО) -->
+        <button
+          id="tab-rko"
+          onclick="switchCategory('rko')"
+          class="tab-btn w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-transparent text-zinc-300 hover:bg-white/5"
+        >
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-electric/20 text-electricLight flex items-center justify-center shrink-0">
+              <i data-lucide="briefcase" class="w-6 h-6 stroke-[2.2]"></i>
+            </div>
+            <div>
+              <div class="font-display font-bold text-sm sm:text-base leading-tight">
+                Фриланс и Бизнес (ИП + РКО)
+              </div>
+              <div class="text-xs opacity-75 font-medium mt-0.5">
+                Регистрация без налоговой, маркетплейсы и заказчики
+              </div>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-lg bg-electric/20 text-electricLight border border-electric/40 font-mono text-xs font-bold shrink-0">
+            3 банка
+          </span>
+        </button>
+      </div>
+
+      <!-- Быстрые теги-фильтры -->
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 w-full sm:w-auto" id="tagFiltersContainer">
+          <button
+            onclick="filterByTag('all')"
+            data-tag="all"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-white text-graphite shadow-sm"
+          >
+            # Все продукты
+          </button>
+          <button
+            onclick="filterByTag('Максимальный кэшбэк')"
+            data-tag="Максимальный кэшбэк"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
+          >
+            🔥 Максимальный кэшбэк
+          </button>
+          <button
+            onclick="filterByTag('Быстрая доставка')"
+            data-tag="Быстрая доставка"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
+          >
+            ⚡ Быстрая доставка
+          </button>
+          <button
+            onclick="filterByTag('Для фриланса')"
+            data-tag="Для фриланса"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
+          >
+            💻 Для фриланса
+          </button>
+        </div>
+
+        <!-- Индикатор количества показанных карточек -->
+        <div class="text-xs font-mono text-zinc-400 hidden sm:block" id="offersCounterText">
+          Показано: 6 предложений
+        </div>
+      </div>
+
+      <!-- Сетка карточек продуктов (рендерится из массива offersData) -->
+      <div id="offersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Карточки вставляются динамически через JS -->
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. БЛОК «ПОЛЕЗНЫЙ ГАЙД / FAQ» (ИНТЕРАКТИВНЫЙ АККОРДЕОН)
+    ========================================================================== -->
+    <section id="faq" class="reveal-on-scroll scroll-mt-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Левая колонка: Описание и шпаргалка (4 колонки) -->
+        <div class="lg:col-span-4 bento-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>БАЗА ЗНАНИЙ</span>
+          </div>
+
+          <h2 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight leading-tight">
+            Полезный гайд и ответы на частые вопросы
+          </h2>
+
+          <p class="text-sm text-zinc-300 leading-relaxed">
+            Собрали короткие инструкции без банковской воды: как выжимать максимум кэшбэка и не платить ни рубля за скрытые опции.
+          </p>
+
+          <!-- Интерактивная карточка копирования чек-листа -->
+          <div class="p-4 rounded-2xl bg-graphite border border-white/10 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-lime font-bold">ЧЕК-ЛИСТ ПОСЛЕ ПОЛУЧЕНИЯ</span>
+              <i data-lucide="check-square" class="w-4 h-4 text-lime"></i>
+            </div>
+            <p class="text-xs text-zinc-400">
+              Скопируй памятку из 4 шагов в Избранное Telegram, чтобы сразу настроить новую карту за 1 минуту.
+            </p>
+            <button
+              onclick="copyChecklist()"
+              class="w-full py-2.5 px-3.5 rounded-xl bg-surfaceLight hover:bg-lime hover:text-graphite border border-white/15 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2"
+            >
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copyBtnText">Скопировать чек-лист</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Правая колонка: 4 раскрывающихся вопроса (8 колонок) -->
+        <div class="lg:col-span-8 space-y-4" id="faqAccordionContainer">
+          <!-- Вопрос 1 -->
+          <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
+            <button
+              onclick="toggleFaq(0)"
+              class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
+              aria-expanded="true"
+            >
+              <div class="flex items-center gap-3.5">
+                <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                  01
+                </span>
+                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                  Как получать максимум кэшбэка с нескольких карт?
+                </span>
+              </div>
+              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-lime transition-transform duration-300 rotate-180 shrink-0">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              </div>
+            </button>
+            <div class="faq-content px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+              <p class="mb-2">
+                Секрет прост: так как выпуск и обслуживание дебетовых карт из нашей подборки стоят <strong class="text-lime">0 ₽ навсегда</strong>, опытные пользователи оформляют связку из 2–3 карт разных банков.
+              </p>
+              <ul class="space-y-1.5 list-disc list-inside text-zinc-300">
+                <li>В 1-е число каждого месяца заходи в приложения банков и выбирай <strong>непересекающиеся категории</strong>.</li>
+                <li>Например: по карте «Альфа-Выгода» ставь 5–7% на Супермаркеты и Кафе, по «Т-Смарт» — Такси и Аптеки, а по «ВТБ-Кэш» или «Озон-Кард Про» — Маркетплейсы и Одежду.</li>
+                <li>Перекидывай деньги между своими картами за секунду через СБП без комиссии прямо перед оплатой.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Вопрос 2 -->
+          <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
+            <button
+              onclick="toggleFaq(1)"
+              class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-3.5">
+                <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                  02
+                </span>
+                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                  Как отключить платные СМС-уведомления после получения?
+                </span>
+              </div>
+              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+              <p class="mb-2">
+                При курьерской выдаче или активации карты банки часто подключают пакет «СМС-информирование» (обычно 99 ₽/мес со 2-го месяца). Отключить его можно за 20 секунд:
+              </p>
+              <ol class="space-y-1.5 list-decimal list-inside text-zinc-300">
+                <li>Открой мобильное приложение банка сразу после получения карты.</li>
+                <li>Нажми на иконку карты → перейди в раздел <strong>«Настройки» → «Уведомления об операциях»</strong>.</li>
+                <li>Отключи платный пакет или переключи тумблер на бесплатные Push-уведомления. Все коды 3D-Secure для покупок в интернете всё равно приходят бесплатно по закону!</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Вопрос 3 -->
+          <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
+            <button
+              onclick="toggleFaq(2)"
+              class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-3.5">
+                <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                  03
+                </span>
+                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                  Зачем фрилансеру расчетный счет и чем удобен режим АУСН?
+                </span>
+              </div>
+              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+              <p class="mb-2">
+                Если ты берешь заказы у компаний, выходишь на маркетплейсы (Wildberries, Ozon) или перерос лимит самозанятости (2,4 млн ₽ в год), регулярные переводы на обычную физлицо-карту могут вызвать вопросы у финмониторинга по 115-ФЗ.
+              </p>
+              <p>
+                Счет ИП (РКО) решает эту проблему полностью. А налоговый режим <strong class="text-lime">АУСН (Автоматизированная упрощенка)</strong> освобождает от сдачи деклараций, книги учета и уплаты страховых взносов — банк сам считает налог с приходов, а ты просто нажимаешь одну кнопку в приложении.
+              </p>
+            </div>
+          </div>
+
+          <!-- Вопрос 4 -->
+          <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
+            <button
+              onclick="toggleFaq(3)"
+              class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
+              aria-expanded="false"
+            >
+              <div class="flex items-center gap-3.5">
+                <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                  04
+                </span>
+                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                  Безопасно ли оформлять карту онлайн?
+                </span>
+              </div>
+              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              </div>
+            </button>
+            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+              <p>
+                Абсолютно безопасно. Наш ресурс <strong class="text-white">не собирает и не хранит</strong> твои персональные или паспортные данные. При нажатии на кнопку «Оформить на официальном сайте» ты переходишь напрямую на защищенный шлюз выбранного банка с генеральной лицензией ЦБ РФ, где заполняешь стандартную анкету на доставку карты курьером или в ближайшее отделение.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       6. ПОДВАЛ (FOOTER / ДИСКЛЕЙМЕР ДЛЯ МОДЕРАЦИИ)
+  ========================================================================== -->
+  <footer class="relative z-10 border-t border-white/10 bg-surface/90 pt-10 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-lime flex items-center justify-center text-graphite font-display font-black text-sm">
+            FC
+          </div>
+          <span class="font-display font-bold text-base tracking-tight">
+            FIN<span class="text-lime">CHEAT</span> // 2026
+          </span>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-zinc-400">
+          <a href="#calculator" class="hover:text-lime transition-colors">Калькулятор</a>
+          <a href="#offers" class="hover:text-lime transition-colors">Витрина карт</a>
+          <a href="#faq" class="hover:text-lime transition-colors">Гайд и FAQ</a>
+        </div>
+      </div>
+
+      <!-- Обязательный юридический текст-дисклеймер -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-graphite/80 border border-white/5 text-xs text-zinc-400 leading-relaxed space-y-2">
+        <p class="font-medium text-zinc-300 flex items-center gap-1.5">
+          <i data-lucide="info" class="w-4 h-4 text-lime shrink-0"></i>
+          <span>Правовая информация и дисклеймер:</span>
+        </p>
+        <p>
+          Информационный ресурс. Сайт не является банком или финансовой организацией и предоставляет справочную информацию для сравнения условий банковских продуктов. Все заявки оформляются непосредственно на официальных сайтах банков с лицензией ЦБ РФ. Условия начисления кэшбэка, процентных ставок и тарифов РКО определяются правилами соответствующих кредитных организаций и могут отличаться в зависимости от выбранных категорий. 18+.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       МОДАЛЬНОЕ ОКНО: СХЕМА СВЯЗКИ КАРТ + TOAST-УВЕДОМЛЕНИЕ
+  ========================================================================== -->
+  <div id="comboModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-md">
+    <div class="bento-card rounded-3xl max-w-lg w-full p-6 sm:p-8 border-2 border-lime shadow-neo-purple relative animate-fade-in">
+      <button onclick="closeComboModal()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-surfaceLight hover:bg-white/15 flex items-center justify-center text-zinc-300">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold mb-3">
+        <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+        <span>ЗОЛОТАЯ СВЯЗКА СТУДЕНТА И ФРИЛАНСЕРА</span>
+      </div>
+
+      <h3 class="font-display font-extrabold text-xl sm:text-2xl mb-4">
+        Как выжимать до 4 500 ₽ кэшбэка каждый месяц
+      </h3>
+
+      <div class="space-y-3 text-sm text-zinc-300">
+        <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
+          <span class="font-mono font-bold text-lime block">Карта №1: Альфа-Выгода (База)</span>
+          <p class="text-xs text-zinc-400 mt-1">Используй для супермаркетов, фастфуда и крути барабан суперкэшбэка до 100% каждую пятницу.</p>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
+          <span class="font-mono font-bold text-electricLight block">Карта №2: Т-Смарт (Сервисы и Город)</span>
+          <p class="text-xs text-zinc-400 mt-1">Выбирай 4 категории месяца (такси, аптеки, кино, подписки) + 0 ₽ переводы и удобная кубышка.</p>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
+          <span class="font-mono font-bold text-sky-400 block">Карта №3: Озон-Кард Про / ВТБ-Кэш</span>
+          <p class="text-xs text-zinc-400 mt-1">Закрывает маркетплейсы со скидкой до 30% и транспорт.</p>
+        </div>
+      </div>
+
+      <button onclick="closeComboModal(); document.getElementById('offers').scrollIntoView({behavior: 'smooth'});" class="w-full mt-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm shadow-neo-purple hover:bg-limeDark transition-all">
+        Перейти к оформлению связки
+      </button>
+    </div>
+  </div>
+
+  <!-- Всплывающее уведомление (Toast) вместо alert() -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm">
+    <div class="px-5 py-3.5 rounded-2xl bg-graphite border-2 border-lime shadow-neo-purple flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-lime text-graphite flex items-center justify-center shrink-0">
+        <i data-lucide="check" class="w-5 h-5 stroke-[2.5]"></i>
+      </div>
+      <div class="text-xs sm:text-sm font-medium text-white" id="toastMessage">
+        Чек-лист скопирован в буфер обмена!
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       JAVASCRIPT: ДАННЫЕ ОФФЕРОВ И ЛОГИКА ПРИЛОЖЕНИЯ
+  ========================================================================== -->
+  <script>
+    /**
+     * =========================================================================
+     * КОНФИГУРАЦИЯ ОФФЕРОВ (offersData)
+     * -------------------------------------------------------------------------
+     * Здесь собраны все карточки дебетовых карт (9 шт.) и счетов РКО (3 шт.).
+     * Чтобы заменить партнерскую ссылку — просто поменяй значение поля `url`
+     * у нужного банка. HTML-разметку трогать не нужно!
+     * =========================================================================
+     */
+    const offersData = [
+      // ---------------- ДЕБЕТОВЫЕ КАРТЫ (category: 'debit') ----------------
+      {
+        id: 'alfa-vygoda',
+        title: 'Альфа-Выгода',
+        subtitle: 'Бесплатная карта с суперкэшбэком рублями каждый месяц',
+        badge: 'Топ выбора 2026',
+        badgeColor: 'lime', // 'lime' | 'purple' | 'white'
+        category: 'debit',
+        tags: ['Максимальный кэшбэк', 'Быстрая доставка', 'Для фриланса'],
+        bullets: [
+          '0 ₽ обслуживание всегда без всяких условий и оборотов',
+          'До 30% кэшбэк в 4 категориях на выбор + до 100% в барабане',
+          'Бесплатные переводы по СБП и снятие наличных в банкоматах'
+        ],
+        rating: '4.9',
+        reviewsCount: '2 410',
+        cardCode: 'ALFA // RED-PRO',
+        cardGradient: 'from-rose-600 via-red-500 to-orange-500',
+        recommended: true,
+        url: 'https://example.com/partner/alfa-vygoda' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 't-smart',
+        title: 'Т-Смарт',
+        subtitle: 'Флагманская карта с мгновенным кэшбэком и топовым приложением',
+        badge: 'Кэшбэк до 100%',
+        badgeColor: 'purple',
+        category: 'debit',
+        tags: ['Максимальный кэшбэк', 'Быстрая доставка', 'Для фриланса'],
+        bullets: [
+          'Кэшбэк живыми рублями (до 25% в 4 выбранных категориях)',
+          'Доставка курьером за 1 день прямо к дому',
+          'Кешбек от партнеров до 100%'
+        ],
+        rating: '4.9',
+        reviewsCount: '3 180',
+        cardCode: 'T-BANK // BLACK',
+        cardGradient: 'from-yellow-400 via-amber-500 to-zinc-800',
+        recommended: true,
+        url: 'https://example.com/partner/t-smart' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'vtb-cash',
+        title: 'ВТБ-Кэш',
+        subtitle: 'Высокий возврат на супермаркеты, доставку еды и такси',
+        badge: '0 ₽ навсегда',
+        badgeColor: 'lime',
+        category: 'debit',
+        tags: ['Максимальный кэшбэк', 'Быстрая доставка'],
+        bullets: [
+          'Безусловное 0 ₽ обслуживание без требований к остатку',
+          'До 25% кэшбэка рублями в самых популярных категориях',
+          'До 6% скидка на WB'
+        ],
+        rating: '4.8',
+        reviewsCount: '1 944',
+        cardCode: 'VTB // MULTI',
+        cardGradient: 'from-blue-600 via-indigo-600 to-cyan-500',
+        recommended: true,
+        url: 'https://example.com/partner/t-smart' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'psb',
+        title: 'ПСБ - Твой Кэшбек',
+        subtitle: 'Приветственный бонус «Кэшбэк 10% на маркетплейсы, супермаркеты',
+        badge: '10% маркетплейсы',
+        badgeColor: 'white',
+        category: 'debit',
+        tags: ['Для фриланса', 'Быстрая доставка', 'Максимальный кэшбэк'],
+        bullets: [
+          'Повышенный кэшбэк 10% на маркетплейсы и супермаркеты',
+          'Бесплатное обслуживание навсегда',
+          'Кэшбек 1,5% на все'
+        ],
+        rating: '4.8',
+        reviewsCount: '1 621',
+        cardCode: 'PSB // CASH',
+        cardGradient: 'from-sky-500 via-blue-700 to-slate-900',
+        recommended: false,
+        url: 'https://example.com/partner/sber-youth' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'ozon-card-pro',
+        title: 'Озон-Кард Про',
+        subtitle: 'Идеальная вторая карта для шопинга и повышенных категорий',
+        badge: 'До 25% вне Ozon',
+        badgeColor: 'purple',
+        category: 'debit',
+        tags: ['Максимальный кэшбэк'],
+        bullets: [
+          'Скидки до 30% на маркетплейсе + кэшбэк рублями в обычных магазинах',
+          'Моментальный выпуск виртуальной карты за 2 минуты онлайн',
+          'Начисление высокого процента на ежедневный остаток по счету'
+        ],
+        rating: '4.8',
+        reviewsCount: '1 290',
+        cardCode: 'OZON // FINTECH',
+        cardGradient: 'from-blue-500 via-violet-600 to-fuchsia-600',
+        recommended: false,
+        url: 'https://example.com/partner/ozon-card-pro' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'ubrr',
+        title: 'УБРиР - My Life',
+        subtitle: 'Твоя жизнь - твои правила',
+        badge: 'Свобода',
+        badgeColor: 'lime',
+        category: 'debit',
+        tags: ['Для фриланса', 'Быстрая доставка'],
+        bullets: [
+          'Полное бесплатное обслуживание карты',
+          'Бесплатный выпуск и доставка курьером в удобное время',
+          'Бесплатное снятие наличных в любых банкоматах УБРиР и банкоматах партнерской сети'
+        ],
+        rating: '4.7',
+        reviewsCount: '980',
+        cardCode: 'UBRR // LIFE',
+        cardGradient: 'from-red-300 via-orange-600 to-yellow-400',
+        recommended: false,
+        url: 'https://example.com/partner/gazprom-boost' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'akbars',
+        title: 'АК-Барс Банк',
+        subtitle: 'Кешбек до 10%. Вы сами решаете, за что получать кешбэк.',
+        badge: 'Кешбек до 10%',
+        badgeColor: 'lime',
+        category: 'debit',
+        tags: ['Быстрая доставка', 'Максимальный кэшбэк'],
+        bullets: [
+          'Повышенный кэшбэк до 10% ',
+          'Бесплатное обслуживание при покупках от 1 руб',
+          'На остаток начисляется до 10% годовых'
+        ],
+        rating: '4.7',
+        reviewsCount: '1 678',
+        cardCode: 'BARS // PRIME-Z',
+        cardGradient: 'from-emerald-500 via-green-600 to-teal-700',
+        recommended: false,
+        url: 'https://example.com/partner/sber-youth' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'otp',
+        title: 'ОТП-Супер',
+        subtitle: 'Кэшбэк до 5% с бесплатной дебетовой картой от ОТП Банка',
+        badge: 'Супер кешбек',
+        badgeColor: 'purple',
+        category: 'debit',
+        tags: ['Быстрая доставка', 'Максимальный кэшбэк'],
+        bullets: [
+          'Кэшбэк 5% на кафе и рестораны',
+          'Кэшбэк 5% на фастфуд',
+          'Кэшбэк 3% на супермаркеты'
+        ],
+        rating: '4.9',
+        reviewsCount: '892',
+        cardCode: 'OTP // SUPREME',
+        cardGradient: 'from-yellow-500 via-green-300 to-slate-900',
+        recommended: false,
+        url: 'https://example.com/partner/sber-youth' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'ren',
+        title: 'Ренессанс-Банк',
+        subtitle: 'Кэшбэк 1.5% на всё',
+        badge: 'Связь',
+        badgeColor: 'white',
+        category: 'debit',
+        tags: ['Быстрая доставка'],
+        bullets: [
+          'Бесплатное обслуживание карты навсегда',
+          'Бесплатное снятие наличных в банкоматах банка и банков-партнеров',
+          'Повышенная ставка по накопительным счетам'
+        ],
+        rating: '4.8',
+        reviewsCount: '567',
+        cardCode: 'REN // SVYAZ',
+        cardGradient: 'from-fuchsia-600 via-purple-900 to-transparent',
+        recommended: false,
+        url: 'https://example.com/partner/sber-youth' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+
+
+      // ---------------- ФРИЛАНС И БИЗНЕС (ИП + РКО) (category: 'rko') ----------------
+      {
+        id: 'tochka-start-rko',
+        title: 'Точка-Старт РКО',
+        subtitle: 'Лучший банк для фрилансеров, селлеров WB/Ozon и IT-специалистов',
+        badge: 'Топ для фриланса',
+        badgeColor: 'lime',
+        category: 'rko',
+        tags: ['Для фриланса', 'Быстрая доставка'],
+        bullets: [
+          '0 ₽ за регистрацию ИП онлайн (без визита в налоговую и госпошлины)',
+          'Тариф «Ноль» — 0 ₽ за обслуживание счета при отсутствии оборотов',
+          'Автоматическая бухгалтерия, АУСН и интеграция с маркетплейсами'
+        ],
+        rating: '5.0',
+        reviewsCount: '1 540',
+        cardCode: 'TOCHKA // BIZ',
+        cardGradient: 'from-violet-600 via-purple-600 to-zinc-900',
+        recommended: true,
+        url: 'https://example.com/partner/tochka-rko' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 'alfa-business-zero',
+        title: 'Альфа-Бизнес 0₽',
+        subtitle: 'Счет для ИП с кэшбэком по бизнес-карте и бесплатным стартом',
+        badge: '0 ₽ открытие ИП',
+        badgeColor: 'purple',
+        category: 'rko',
+        tags: ['Для фриланса', 'Максимальный кэшбэк'],
+        bullets: [
+          'Бесплатная регистрация бизнеса с выпуском электронной подписи (КЭП)',
+          'Кэшбэк до 10% на бизнес-расходы, рекламу и закупку техники',
+          'Мгновенный вывод средств на личную карту физлица без сложных анкет'
+        ],
+        rating: '4.9',
+        reviewsCount: '1 120',
+        cardCode: 'ALFA // CORP',
+        cardGradient: 'from-red-600 via-rose-700 to-zinc-900',
+        recommended: false,
+        url: 'https://example.com/partner/alfa-business' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      },
+      {
+        id: 't-business-freelance',
+        title: 'Т-Бизнес Фриланс',
+        subtitle: 'Экосистема для работы с заказчиками, эквайринга и оплаты по ссылкам',
+        badge: '2 мес. 0 ₽ тест-драйв',
+        badgeColor: 'lime',
+        category: 'rko',
+        tags: ['Для фриланса', 'Быстрая доставка'],
+        bullets: [
+          'Прием оплат от клиентов по QR-коду и платежным ссылкам в Telegram',
+          'Личный менеджер 24/7 в чате и бесплатный конструктор сайтов',
+          'Выезд представителя с документами и бизнес-картой уже завтра'
+        ],
+        rating: '4.9',
+        reviewsCount: '1 870',
+        cardCode: 'T-BIZ // PRO',
+        cardGradient: 'from-amber-400 via-yellow-500 to-neutral-900',
+        recommended: false,
+        url: 'https://example.com/partner/t-business' // <-- ВСТАВЬ СВОЮ ПАРТНЕРСКУЮ ССЫЛКУ СЮДА
+      }
+    ];
+
+    // Текущее состояние фильтрации
+    let currentCategory = 'debit'; // 'debit' | 'rko'
+    let currentTag = 'all';
+    let highlightRecommendedMode = false;
+
+    /**
+     * =========================================================================
+     * РЕНДЕРИНГ КАРТОЧЕК ПРОДУКТОВ В СЕТКУ
+     * =========================================================================
+     */
+    function renderOffers() {
+      const grid = document.getElementById('offersGrid');
+      const counterText = document.getElementById('offersCounterText');
+
+      // Фильтрация по выбранной вкладке и тегу
+      const filteredOffers = offersData.filter(item => {
+        const matchesCategory = item.category === currentCategory;
+        const matchesTag = currentTag === 'all' || item.tags.includes(currentTag);
+        return matchesCategory && matchesTag;
+      });
+
+      // Обновляем счетчик
+      if (counterText) {
+        counterText.textContent = `Показано: ${filteredOffers.length} ${getPluralForm(filteredOffers.length, ['предложение', 'предложения', 'предложений'])}`;
+      }
+
+      if (filteredOffers.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full bento-card rounded-3xl p-10 text-center space-y-4 border border-white/10">
+            <div class="w-12 h-12 rounded-2xl bg-surfaceLight mx-auto flex items-center justify-center text-lime">
+              <i data-lucide="search-x" class="w-6 h-6"></i>
+            </div>
+            <div class="font-display font-bold text-lg">В этой категории нет карт с выбранным тегом</div>
+            <p class="text-sm text-zinc-400">Попробуй сбросить быстрый фильтр или переключить вкладку выше.</p>
+            <button onclick="filterByTag('all')" class="px-5 py-2.5 rounded-xl bg-lime text-graphite font-bold text-xs uppercase font-mono">
+              Показать все в категории
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = filteredOffers.map(offer => {
+        // Определяем стиль бейджа
+        let badgeClasses = 'bg-lime text-graphite border-lime';
+        if (offer.badgeColor === 'purple') {
+          badgeClasses = 'bg-electric text-white border-electricLight';
+        } else if (offer.badgeColor === 'white') {
+          badgeClasses = 'bg-white text-graphite border-white';
+        }
+
+        // Дополнительная подсветка если пользователь пришел с калькулятора
+        const highlightBorder = (highlightRecommendedMode && offer.recommended)
+          ? 'ring-2 ring-lime shadow-glow-lime'
+          : '';
+
+        const bulletsHtml = offer.bullets.map(bullet => `
+          <li class="flex items-start gap-2.5 text-sm text-zinc-200 leading-snug">
+            <span class="w-5 h-5 rounded-md bg-lime/15 border border-lime/40 text-lime flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+            </span>
+            <span>${bullet}</span>
+          </li>
+        `).join('');
+
+        const tagsHtml = offer.tags.map(tag => `
+          <span class="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-zinc-300">
+            ${tag}
+          </span>
+        `).join('');
+
+        return `
+          <article class="tilt-card bento-card rounded-3xl p-6 flex flex-col justify-between border border-white/15 hover:border-lime/60 group ${highlightBorder}">
+            <div class="relative z-10 space-y-5">
+              <!-- Верхняя строка: Бейдж и Рейтинг -->
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-lg font-mono font-extrabold text-xs uppercase border ${badgeClasses} shadow-sm">
+                  ${offer.badge}
+                </span>
+                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-graphite/80 border border-white/10 text-xs font-mono">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-lime fill-lime"></i>
+                  <span class="font-bold text-white">${offer.rating}</span>
+                  <span class="text-zinc-500">(${offer.reviewsCount})</span>
+                </div>
+              </div>
+
+              <!-- Мини-визуал банковской карты в стиле Neo-Brutalism -->
+              <div class="p-4 rounded-2xl bg-gradient-to-br ${offer.cardGradient} border border-white/20 shadow-lg relative overflow-hidden">
+                <div class="flex items-center justify-between text-xs font-mono text-white/90">
+                  <span class="font-bold tracking-wider">${offer.cardCode}</span>
+                  <i data-lucide="wifi" class="w-4 h-4 rotate-90 opacity-80"></i>
+                </div>
+                <div class="mt-5 flex items-end justify-between">
+                  <div>
+                    <div class="font-display font-black text-xl sm:text-2xl text-white tracking-tight drop-shadow">
+                      ${offer.title}
+                    </div>
+                  </div>
+                  <div class="w-9 h-6 rounded bg-white/25 backdrop-blur-sm border border-white/40 flex items-center justify-center">
+                    <div class="w-4 h-3 rounded-sm border border-white/60"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Краткое описание -->
+              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                ${offer.subtitle}
+              </p>
+
+              <!-- 3 буллита с главными плюсами -->
+              <ul class="space-y-2.5 pt-1">
+                ${bulletsHtml}
+              </ul>
+            </div>
+
+            <!-- Нижняя часть карточки: Теги и партнерская кнопка -->
+            <div class="relative z-10 pt-6 mt-6 border-t border-white/10 space-y-4">
+              <div class="flex flex-wrap gap-1.5">
+                ${tagsHtml}
+              </div>
+
+              <a
+                href="${offer.url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3.5 px-4 rounded-2xl bg-lime group-hover:bg-lime text-graphite font-extrabold text-sm shadow-neo-purple hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center justify-center gap-2"
+              >
+                <span>Оформить на официальном сайте</span>
+                <i data-lucide="external-link" class="w-4 h-4 stroke-[2.5]"></i>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // Инициализируем иконки Lucide и 3D-наклон для новых карточек
+      lucide.createIcons();
+      init3DTiltCards();
+    }
+
+    /**
+     * =========================================================================
+     * ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК (ДЕБЕТОВЫЕ КАРТЫ / РКО) И ТЕГОВ
+     * =========================================================================
+     */
+    function switchCategory(category) {
+      currentCategory = category;
+      currentTag = 'all'; // Сбрасываем тег при смене главной категории для удобства
+      highlightRecommendedMode = false;
+
+      const tabDebit = document.getElementById('tab-debit');
+      const tabRko = document.getElementById('tab-rko');
+
+      if (category === 'debit') {
+        tabDebit.className = 'tab-btn active-tab w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-lime text-graphite shadow-neo-purple';
+        tabRko.className = 'tab-btn w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-transparent text-zinc-300 hover:bg-white/5';
+      } else {
+        tabRko.className = 'tab-btn active-tab w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-electric text-white shadow-neo-lime';
+        tabDebit.className = 'tab-btn w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-transparent text-zinc-300 hover:bg-white/5';
+      }
+
+      updateTagButtonsUI();
+      renderOffers();
+    }
+
+    function filterByTag(tag) {
+      currentTag = tag;
+      highlightRecommendedMode = false;
+      updateTagButtonsUI();
+      renderOffers();
+    }
+
+    function updateTagButtonsUI() {
+      const buttons = document.querySelectorAll('.tag-filter-btn');
+      buttons.forEach(btn => {
+        const btnTag = btn.getAttribute('data-tag');
+        if (btnTag === currentTag) {
+          btn.className = 'tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-white text-graphite shadow-sm';
+        } else {
+          btn.className = 'tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50';
+        }
+      });
+    }
+
+    function highlightRecommendedCards() {
+      currentCategory = 'debit';
+      currentTag = 'all';
+      highlightRecommendedMode = true;
+      switchCategory('debit');
+      highlightRecommendedMode = true;
+      renderOffers();
+      showToast('Подсветили топ-3 карты с максимальной выгодой под твои траты!');
+    }
+
+    /**
+     * =========================================================================
+     * ЛОГИКА ИНТЕРАКТИВНОГО КАЛЬКУЛЯТОРА ВЫГОДЫ
+     * =========================================================================
+     */
+    const spendFoodSlider = document.getElementById('spendFoodSlider');
+    const spendSubsSlider = document.getElementById('spendSubsSlider');
+    const comboBoostToggle = document.getElementById('comboBoostToggle');
+
+    const spendFoodDisplay = document.getElementById('spendFoodDisplay');
+    const spendSubsDisplay = document.getElementById('spendSubsDisplay');
+    const yearlyCashbackOutput = document.getElementById('yearlyCashbackOutput');
+    const monthlyCashbackOutput = document.getElementById('monthlyCashbackOutput');
+    const calcRateBadge = document.getElementById('calcRateBadge');
+
+    function formatRubles(num) {
+      return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+    }
+
+    function calculateCashback() {
+      const foodSpend = parseInt(spendFoodSlider.value, 10) || 0;
+      const subsSpend = parseInt(spendSubsSlider.value, 10) || 0;
+      const isCombo = comboBoostToggle.checked;
+
+      // Обновляем подписи ползунков
+      spendFoodDisplay.textContent = formatRubles(foodSpend);
+      spendSubsDisplay.textContent = formatRubles(subsSpend);
+
+      // Ставки возврата:
+      // При связке карт средний кэшбэк на супермаркеты/фастфуд ~8.5%, на подписки/сервисы/маркетплейсы ~14%
+      // Без связки (1 карта) ~5.5% и ~9%
+      const foodRate = isCombo ? 0.085 : 0.055;
+      const subsRate = isCombo ? 0.14 : 0.09;
+      const welcomeBonusYear = isCombo ? 2500 : 1000;
+
+      const monthlyCashback = (foodSpend * foodRate) + (subsSpend * subsRate);
+      const yearlyCashback = (monthlyCashback * 12) + ((foodSpend + subsSpend > 0) ? welcomeBonusYear : 0);
+
+      const totalSpend = foodSpend + subsSpend;
+      const effectiveRate = totalSpend > 0
+        ? (((monthlyCashback / totalSpend) * 100)).toFixed(1)
+        : '0.0';
+
+      yearlyCashbackOutput.textContent = `~${formatRubles(yearlyCashback)}`;
+      monthlyCashbackOutput.textContent = `~${formatRubles(monthlyCashback + (totalSpend > 0 ? welcomeBonusYear / 12 : 0))}/мес`;
+      calcRateBadge.textContent = `Эфф. возврат ~${effectiveRate}%`;
+    }
+
+    spendFoodSlider.addEventListener('input', calculateCashback);
+    spendSubsSlider.addEventListener('input', calculateCashback);
+    comboBoostToggle.addEventListener('change', calculateCashback);
+
+    /**
+     * =========================================================================
+     * 3D-НАКЛОН КАРТОЧЕК ПРИ НАВЕДЕНИИ (НА ДЕСКТОПАХ)
+     * =========================================================================
+     */
+    function init3DTiltCards() {
+      // Отключаем тяжелый 3D-наклон на сенсорных экранах для идеального скролла
+      if (window.matchMedia('(pointer: coarse)').matches) return;
+
+      const cards = document.querySelectorAll('.tilt-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -5.5;
+          const rotateY = ((x - centerX) / centerX) * 5.5;
+
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+    }
+
+    /**
+     * =========================================================================
+     * АККОРДЕОН В БЛОКЕ FAQ
+     * =========================================================================
+     */
+    function toggleFaq(index) {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach((item, idx) => {
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        const btn = item.querySelector('button');
+
+        if (idx === index) {
+          const isHidden = content.classList.contains('hidden');
+          if (isHidden) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180', 'text-lime');
+            icon.classList.remove('text-zinc-400');
+            btn.setAttribute('aria-expanded', 'true');
+          } else {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180', 'text-lime');
+            icon.classList.add('text-zinc-400');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        } else {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180', 'text-lime');
+          icon.classList.add('text-zinc-400');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    /**
+     * =========================================================================
+     * МОДАЛЬНОЕ ОКНО И КОПИРОВАНИЕ ЧЕК-ЛИСТА В БУФЕР ОБМЕНА
+     * =========================================================================
+     */
+    function openComboModal() {
+      const modal = document.getElementById('comboModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeComboModal() {
+      const modal = document.getElementById('comboModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function copyChecklist() {
+      const checklistText = [
+        '⚡ ЧЕК-ЛИСТ FINCHEAT ПОСЛЕ ПОЛУЧЕНИЯ КАРТЫ:',
+        '1. Зайди в приложение → Настройки → Уведомления и отключи платные СМС (оставь бесплатные Push).',
+        '2. Выбери повышенные категории кэшбэка на текущий месяц (чтобы они не пересекались со второй картой).',
+        '3. Сделай первую покупку от 500–1000 ₽ для активации приветственного бонуса.',
+        '4. Подключи Систему быстрых платежей (СБП) по умолчанию для переводов без комиссии.'
+      ].join('\n');
+
+      const textarea = document.createElement('textarea');
+      textarea.value = checklistText;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      try {
+        document.execCommand('copy');
+        const copyBtnText = document.getElementById('copyBtnText');
+        copyBtnText.textContent = 'Скопировано!';
+        showToast('Чек-лист скопирован! Сохрани его в Избранное Telegram.');
+        setTimeout(() => {
+          copyBtnText.textContent = 'Скопировать чек-лист';
+        }, 3000);
+      } catch (err) {
+        showToast('Не удалось скопировать автоматически');
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msgEl = document.getElementById('toastMessage');
+      msgEl.textContent = message;
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3400);
+    }
+
+    function getPluralForm(number, titles) {
+      const cases = [2, 0, 1, 1, 1, 2];
+      return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+    }
+
+    /**
+     * =========================================================================
+     * ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
+     * =========================================================================
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+      // Первичный рендер карточек и калькулятора
+      renderOffers();
+      calculateCashback();
+      lucide.createIcons();
+
+      // Плавное появление блоков при скролле (IntersectionObserver)
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Закрытие модального окна по клику на фон или Escape
+      document.getElementById('comboModal').addEventListener('click', (e) => {
+        if (e.target.id === 'comboModal') closeComboModal();
+      });
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeComboModal();
+      });
+    });
+  </script>
+</body>
+</html>
