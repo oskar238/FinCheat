@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>FINCHEAT // Финансовый чит-код для студентов и фрилансеров</title>
-  <meta name="description" content="Подбираем дебетовые карты с максимальным кэшбэком и бесплатные счета РКО для старта своего дела без скрытых комиссий." />
+  <meta name="description"
+    content="Подбираем дебетовые карты с максимальным кэшбэком и бесплатные счета РКО для старта своего дела без скрытых комиссий." />
 
   <!-- Подключение шрифтов: Space Grotesk / Unbounded для заголовков и Inter для интерфейса -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Unbounded:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <!-- Подключение Tailwind CSS через CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -74,7 +78,7 @@
     /* Фоновая сетка в стиле Linear/Bento */
     .bg-grid-pattern {
       background-size: 40px 40px;
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     }
@@ -106,11 +110,9 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(
-        500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(204, 255, 0, 0.08),
-        transparent 45%
-      );
+      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(204, 255, 0, 0.08),
+          transparent 45%);
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
@@ -183,8 +185,17 @@
 
     /* Бегущая строка / пульсация */
     @keyframes pulse-glow {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.55; transform: scale(1.12); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.55;
+        transform: scale(1.12);
+      }
     }
 
     .animate-pulse-dot {
@@ -195,12 +206,33 @@
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
+
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
   </style>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=114126044', 'ym');
+
+    ym(114126044, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/114126044" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+
+
 </head>
+
 <body class="bg-graphite text-white antialiased selection:bg-lime selection:text-graphite relative">
 
   <!-- Декоративные фоновые неоновые свечения -->
@@ -218,7 +250,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
       <!-- Логотип -->
       <a href="#" class="flex items-center gap-2.5 group focus:outline-none">
-        <div class="w-10 h-10 rounded-xl bg-lime flex items-center justify-center text-graphite font-display font-black text-lg shadow-neo-purple group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
+        <div
+          class="w-10 h-10 rounded-xl bg-lime flex items-center justify-center text-graphite font-display font-black text-lg shadow-neo-purple group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
           FC
         </div>
         <div>
@@ -233,15 +266,18 @@
 
       <!-- Навигационные ссылки (Десктоп) -->
       <nav class="hidden md:flex items-center gap-1 bg-surface/90 border border-white/10 rounded-xl p-1.5">
-        <a href="#calculator" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+        <a href="#calculator"
+          class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
           <i data-lucide="sliders" class="w-4 h-4 text-lime"></i>
           Калькулятор
         </a>
-        <a href="#offers" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+        <a href="#offers"
+          class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
           <i data-lucide="credit-card" class="w-4 h-4 text-electricLight"></i>
           Карты и РКО
         </a>
-        <a href="#faq" class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
+        <a href="#faq"
+          class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/5 transition-colors flex items-center gap-1.5">
           <i data-lucide="Lightbulb" class="w-4 h-4 text-lime"></i>
           Гайд и FAQ
         </a>
@@ -249,11 +285,13 @@
 
       <!-- Правая часть: Статус + Кнопка быстрого перехода -->
       <div class="flex items-center gap-2.5">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-white/10 text-xs font-mono text-zinc-300">
+        <div
+          class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-white/10 text-xs font-mono text-zinc-300">
           <span class="w-2 h-2 rounded-full bg-lime animate-pulse-dot"></span>
           <span>Ноябрь 2026</span>
         </div>
-        <a href="#offers" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-lime text-graphite font-bold text-xs sm:text-sm shadow-neo-purple hover:bg-limeDark active:translate-y-0.5 transition-all flex items-center gap-1.5">
+        <a href="#offers"
+          class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-lime text-graphite font-bold text-xs sm:text-sm shadow-neo-purple hover:bg-limeDark active:translate-y-0.5 transition-all flex items-center gap-1.5">
           <span>Топ-офферы</span>
           <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2.5]"></i>
         </a>
@@ -269,15 +307,18 @@
     <section class="reveal-on-scroll">
       <!-- Интерактивные бейджи-статистика сверху -->
       <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-lime/40 text-xs sm:text-sm font-mono text-lime shadow-sm">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-lime/40 text-xs sm:text-sm font-mono text-lime shadow-sm">
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
           <span>Обновлено: ноябрь 2026</span>
         </div>
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-electric/50 text-xs sm:text-sm font-mono text-electricLight">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-electric/50 text-xs sm:text-sm font-mono text-electricLight">
           <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
           <span>Проверено 15+ банков РФ</span>
         </div>
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-white/10 text-xs sm:text-sm font-mono text-zinc-300">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface/90 border border-white/10 text-xs sm:text-sm font-mono text-zinc-300">
           <i data-lucide="zap" class="w-3.5 h-3.5 text-lime"></i>
           <span>0 ₽ скрытых платежей</span>
         </div>
@@ -286,32 +327,41 @@
       <!-- Главная Bento-сетка Hero -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
         <!-- Левая главная карточка Hero (8 колонок) -->
-        <div class="lg:col-span-8 bento-card rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between border border-white/15">
-          <div class="absolute -right-12 -top-12 w-52 h-52 bg-electric/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div
+          class="lg:col-span-8 bento-card rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col justify-between border border-white/15">
+          <div class="absolute -right-12 -top-12 w-52 h-52 bg-electric/20 rounded-full blur-3xl pointer-events-none">
+          </div>
 
           <div class="space-y-5 relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-electric/20 border border-electric/40 text-electricLight text-xs font-mono uppercase tracking-wider">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-electric/20 border border-electric/40 text-electricLight text-xs font-mono uppercase tracking-wider">
               <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
               Для студентов, селлеров и фрилансеров 18–25
             </div>
 
             <h1 class="font-display font-black text-2xl sm:text-4xl lg:text-5xl leading-[1.12] tracking-tight">
-              Финансовый <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime via-white to-electricLight">чит-код</span> для студентов и фрилансеров
+              Финансовый <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-lime via-white to-electricLight">чит-код</span>
+              для студентов и фрилансеров
             </h1>
 
             <p class="text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
-              Подбираем карты с максимальным кэшбэком и бесплатные счета для старта своего дела без скрытых комиссий. Никаких душных тарифов — только чистый профит.
+              Подбираем карты с максимальным кэшбэком и бесплатные счета для старта своего дела без скрытых комиссий.
+              Никаких душных тарифов — только чистый профит.
             </p>
           </div>
 
           <!-- Нижний ряд кнопок и микро-преимуществ -->
-          <div class="pt-8 mt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+          <div
+            class="pt-8 mt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
             <div class="flex flex-wrap items-center gap-3">
-              <a href="#offers" class="w-full sm:w-auto justify-center px-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm sm:text-base shadow-neo-purple hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-2">
+              <a href="#offers"
+                class="w-full sm:w-auto justify-center px-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm sm:text-base shadow-neo-purple hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-2">
                 <span>Подобрать карту</span>
                 <i data-lucide="arrow-down-right" class="w-5 h-5 stroke-[2.5]"></i>
               </a>
-              <a href="#calculator" class="w-full sm:w-auto justify-center px-5 py-3.5 rounded-2xl bg-surfaceLight hover:bg-white/10 text-white font-semibold text-sm sm:text-base border border-white/15 transition-all flex items-center gap-2">
+              <a href="#calculator"
+                class="w-full sm:w-auto justify-center px-5 py-3.5 rounded-2xl bg-surfaceLight hover:bg-white/10 text-white font-semibold text-sm sm:text-base border border-white/15 transition-all flex items-center gap-2">
                 <i data-lucide="calculator" class="w-4 h-4 text-lime"></i>
                 <span>Посчитать кэшбэк</span>
               </a>
@@ -319,9 +369,12 @@
 
             <div class="flex items-center gap-3 text-xs text-zinc-400 font-mono">
               <div class="flex -space-x-2">
-                <span class="w-7 h-7 rounded-full bg-lime text-graphite font-bold flex items-center justify-center border-2 border-graphite text-[11px]">А</span>
-                <span class="w-7 h-7 rounded-full bg-electric text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">Т</span>
-                <span class="w-7 h-7 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">В</span>
+                <span
+                  class="w-7 h-7 rounded-full bg-lime text-graphite font-bold flex items-center justify-center border-2 border-graphite text-[11px]">А</span>
+                <span
+                  class="w-7 h-7 rounded-full bg-electric text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">Т</span>
+                <span
+                  class="w-7 h-7 rounded-full bg-sky-500 text-white font-bold flex items-center justify-center border-2 border-graphite text-[11px]">В</span>
               </div>
               <span>Оформление за 2 мин онлайн</span>
             </div>
@@ -331,32 +384,42 @@
         <!-- Правая Bento-колонка со статами и фичей комбо (4 колонки) -->
         <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
           <!-- Блок 1: Максимальный кэшбэк -->
-          <div class="bento-card rounded-3xl p-6 border border-lime/30 relative overflow-hidden flex flex-col justify-between">
+          <div
+            class="bento-card rounded-3xl p-6 border border-lime/30 relative overflow-hidden flex flex-col justify-between">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-zinc-400">Комбо-стратегия</span>
-              <span class="px-2.5 py-1 rounded-md bg-lime/15 text-lime font-mono text-xs font-bold border border-lime/30">PRO HACK</span>
+              <span
+                class="px-2.5 py-1 rounded-md bg-lime/15 text-lime font-mono text-xs font-bold border border-lime/30">PRO
+                HACK</span>
             </div>
             <div class="my-4">
               <div class="font-display font-black text-3xl sm:text-4xl text-lime tracking-tight">до 30%</div>
-              <p class="text-sm text-zinc-300 mt-1">Кэшбэк рублями на фастфуд, маркетплейсы, доставку и такси при связке из 2–3 бесплатных карт.</p>
+              <p class="text-sm text-zinc-300 mt-1">Кэшбэк рублями на фастфуд, маркетплейсы, доставку и такси при связке
+                из 2–3 бесплатных карт.</p>
             </div>
-            <button onclick="openComboModal()" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-lime hover:text-graphite border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
+            <button onclick="openComboModal()"
+              class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-lime hover:text-graphite border border-white/10 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
               <span>Посмотреть схему связки</span>
               <i data-lucide="layers" class="w-4 h-4"></i>
             </button>
           </div>
 
           <!-- Блок 2: Фриланс и РКО -->
-          <div class="bento-card rounded-3xl p-6 border border-electric/40 relative overflow-hidden flex flex-col justify-between">
+          <div
+            class="bento-card rounded-3xl p-6 border border-electric/40 relative overflow-hidden flex flex-col justify-between">
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono uppercase tracking-wider text-zinc-400">Старт без налоговой</span>
-              <span class="px-2.5 py-1 rounded-md bg-electric/20 text-electricLight font-mono text-xs font-bold border border-electric/40">ИП + РКО 0 ₽</span>
+              <span
+                class="px-2.5 py-1 rounded-md bg-electric/20 text-electricLight font-mono text-xs font-bold border border-electric/40">ИП
+                + РКО 0 ₽</span>
             </div>
             <div class="my-4">
               <div class="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">0 ₽ госпошлина</div>
-              <p class="text-sm text-zinc-300 mt-1">Банк сам выпустит КЭП и откроет ИП удаленно. Идеально для работы с заказчиками, WB и Ozon.</p>
+              <p class="text-sm text-zinc-300 mt-1">Банк сам выпустит КЭП и откроет ИП удаленно. Идеально для работы с
+                заказчиками, WB и Ozon.</p>
             </div>
-            <a href="#offers" onclick="switchCategory('rko')" class="w-full py-2.5 px-4 rounded-xl bg-electric/20 hover:bg-electric text-white border border-electric/40 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
+            <a href="#offers" onclick="switchCategory('rko')"
+              class="w-full py-2.5 px-4 rounded-xl bg-electric/20 hover:bg-electric text-white border border-electric/40 text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-between">
               <span>Открыть вкладку РКО</span>
               <i data-lucide="briefcase" class="w-4 h-4"></i>
             </a>
@@ -385,7 +448,8 @@
             </h2>
           </div>
           <p class="text-sm text-zinc-400 max-w-md">
-            Двигай ползунки под свои реальные расходы в месяц — алгоритм посчитает возврат рублями при использовании топ-карт из подборки.
+            Двигай ползунки под свои реальные расходы в месяц — алгоритм посчитает возврат рублями при использовании
+            топ-карт из подборки.
           </p>
         </div>
 
@@ -397,27 +461,23 @@
             <!-- Ползунок 1: Супермаркеты и фастфуд -->
             <div class="p-5 rounded-2xl bg-surfaceLight/70 border border-white/10 space-y-4">
               <div class="flex items-center justify-between gap-2">
-                <label for="spendFoodSlider" class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 flex items-center justify-center text-lime">
+                <label for="spendFoodSlider"
+                  class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
+                  <span
+                    class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 flex items-center justify-center text-lime">
                     <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                   </span>
                   <span>Траты в супермаркетах и фастфуде в месяц</span>
                 </label>
-                <div class="px-3.5 py-1.5 rounded-xl bg-graphite border border-lime/50 font-mono font-bold text-lime text-base sm:text-lg whitespace-nowrap" id="spendFoodDisplay">
+                <div
+                  class="px-3.5 py-1.5 rounded-xl bg-graphite border border-lime/50 font-mono font-bold text-lime text-base sm:text-lg whitespace-nowrap"
+                  id="spendFoodDisplay">
                   25 000 ₽
                 </div>
               </div>
 
-              <input
-                id="spendFoodSlider"
-                type="range"
-                min="0"
-                max="100000"
-                step="1000"
-                value="25000"
-                class="neo-slider"
-                aria-label="Траты в супермаркетах и фастфуде в месяц"
-              />
+              <input id="spendFoodSlider" type="range" min="0" max="100000" step="1000" value="25000" class="neo-slider"
+                aria-label="Траты в супермаркетах и фастфуде в месяц" />
 
               <div class="flex justify-between text-[11px] font-mono text-zinc-400">
                 <span>0 ₽</span>
@@ -430,27 +490,23 @@
             <!-- Ползунок 2: Переводы, подписки, маркетплейсы и такси -->
             <div class="p-5 rounded-2xl bg-surfaceLight/70 border border-white/10 space-y-4">
               <div class="flex items-center justify-between gap-2">
-                <label for="spendSubsSlider" class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 flex items-center justify-center text-electricLight">
+                <label for="spendSubsSlider"
+                  class="text-sm sm:text-base font-semibold text-white flex items-center gap-2">
+                  <span
+                    class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 flex items-center justify-center text-electricLight">
                     <i data-lucide="smartphone" class="w-4 h-4"></i>
                   </span>
                   <span>Переводы / оплата подписок и сервисов</span>
                 </label>
-                <div class="px-3.5 py-1.5 rounded-xl bg-graphite border border-electric/50 font-mono font-bold text-electricLight text-base sm:text-lg whitespace-nowrap" id="spendSubsDisplay">
+                <div
+                  class="px-3.5 py-1.5 rounded-xl bg-graphite border border-electric/50 font-mono font-bold text-electricLight text-base sm:text-lg whitespace-nowrap"
+                  id="spendSubsDisplay">
                   10 000 ₽
                 </div>
               </div>
 
-              <input
-                id="spendSubsSlider"
-                type="range"
-                min="0"
-                max="50000"
-                step="500"
-                value="10000"
-                class="neo-slider"
-                aria-label="Переводы и оплата подписок в месяц"
-              />
+              <input id="spendSubsSlider" type="range" min="0" max="50000" step="500" value="10000" class="neo-slider"
+                aria-label="Переводы и оплата подписок в месяц" />
 
               <div class="flex justify-between text-[11px] font-mono text-zinc-400">
                 <span>0 ₽</span>
@@ -461,16 +517,21 @@
             </div>
 
             <!-- Дополнительный интерактивный чекбокс «Связка из 2 карт» -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-graphite/70 border border-white/10">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-graphite/70 border border-white/10">
               <label class="flex items-center gap-3 cursor-pointer select-none">
                 <input type="checkbox" id="comboBoostToggle" checked class="sr-only peer" />
-                <div class="w-11 h-6 bg-surfaceLight peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-graphite after:rounded-full after:h-5 after:w-5 after:transition-all relative peer-checked:bg-lime border border-white/20"></div>
+                <div
+                  class="w-11 h-6 bg-surfaceLight peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-graphite after:rounded-full after:h-5 after:w-5 after:transition-all relative peer-checked:bg-lime border border-white/20">
+                </div>
                 <div>
-                  <span class="text-sm font-bold text-white block">Режим «Связка 2–3 карт» (+Приветственные бонусы)</span>
+                  <span class="text-sm font-bold text-white block">Режим «Связка 2–3 карт» (+Приветственные
+                    бонусы)</span>
                   <span class="text-xs text-zinc-400">Комбинируем повышенные категории разных банков каждый месяц</span>
                 </div>
               </label>
-              <span class="px-2.5 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold self-start sm:self-center whitespace-nowrap">
+              <span
+                class="px-2.5 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold self-start sm:self-center whitespace-nowrap">
                 +2 500 ₽ старт-бонус
               </span>
             </div>
@@ -478,7 +539,8 @@
 
           <!-- Правая часть: Результат с неоновой рамкой (5 колонок) -->
           <div class="lg:col-span-5">
-            <div class="rounded-3xl bg-graphite border-2 border-lime p-6 sm:p-8 shadow-neo-purple relative overflow-hidden">
+            <div
+              class="rounded-3xl bg-graphite border-2 border-lime p-6 sm:p-8 shadow-neo-purple relative overflow-hidden">
               <div class="flex items-center justify-between mb-4">
                 <span class="px-3 py-1 rounded-lg bg-lime text-graphite font-mono font-extrabold text-xs uppercase">
                   Расчет в реальном времени
@@ -491,7 +553,8 @@
               </p>
 
               <!-- Главная цифра выгоды -->
-              <div class="my-3 font-display font-black text-3xl sm:text-5xl text-lime tracking-tight" id="yearlyCashbackOutput">
+              <div class="my-3 font-display font-black text-3xl sm:text-5xl text-lime tracking-tight"
+                id="yearlyCashbackOutput">
                 ~44 700 ₽
               </div>
 
@@ -499,7 +562,8 @@
               <div class="grid grid-cols-2 gap-3 my-6 pt-5 border-t border-white/10">
                 <div class="p-3 rounded-xl bg-surface border border-white/5">
                   <span class="text-xs text-zinc-400 block">В среднем в месяц:</span>
-                  <span class="font-mono font-bold text-base sm:text-lg text-white mt-0.5 block" id="monthlyCashbackOutput">~3 725 ₽/мес</span>
+                  <span class="font-mono font-bold text-base sm:text-lg text-white mt-0.5 block"
+                    id="monthlyCashbackOutput">~3 725 ₽/мес</span>
                 </div>
                 <div class="p-3 rounded-xl bg-surface border border-white/5">
                   <span class="text-xs text-zinc-400 block">Обслуживание карт:</span>
@@ -508,14 +572,11 @@
               </div>
 
               <!-- Кнопка скролла к подходящим картам -->
-              <a
-                href="#offers"
-                id="calcActionBtn"
-                onclick="highlightRecommendedCards()"
-                class="w-full py-4 px-5 rounded-2xl bg-lime hover:bg-limeDark text-graphite font-extrabold text-sm sm:text-base transition-all flex items-center justify-center gap-2 shadow-glow-lime group"
-              >
+              <a href="#offers" id="calcActionBtn" onclick="highlightRecommendedCards()"
+                class="w-full py-4 px-5 rounded-2xl bg-lime hover:bg-limeDark text-graphite font-extrabold text-sm sm:text-base transition-all flex items-center justify-center gap-2 shadow-glow-lime group">
                 <span>Перейти к подходящим картам</span>
-                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[2.5]"></i>
+                <i data-lucide="arrow-right"
+                  class="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[2.5]"></i>
               </a>
 
               <p class="text-[11px] text-zinc-400 text-center mt-3 font-mono">
@@ -534,7 +595,8 @@
       <!-- Заголовок витрины -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 text-electricLight font-mono text-xs uppercase tracking-widest mb-2">
+          <div
+            class="inline-flex items-center gap-2 text-electricLight font-mono text-xs uppercase tracking-widest mb-2">
             <i data-lucide="layers" class="w-4 h-4"></i>
             <span>Рейтинг финансовых продуктов 2026</span>
           </div>
@@ -551,11 +613,8 @@
       <!-- Главные вкладки категорий (Дебетовые карты / Фриланс и РКО) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 p-2 rounded-3xl bg-surface border border-white/10">
         <!-- Вкладка 1: Дебетовые карты -->
-        <button
-          id="tab-debit"
-          onclick="switchCategory('debit')"
-          class="tab-btn active-tab w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-lime text-graphite shadow-neo-purple"
-        >
+        <button id="tab-debit" onclick="switchCategory('debit')"
+          class="tab-btn active-tab w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-lime text-graphite shadow-neo-purple">
           <div class="flex items-center gap-3.5">
             <div class="w-11 h-11 rounded-xl bg-graphite/15 flex items-center justify-center shrink-0">
               <i data-lucide="credit-card" class="w-6 h-6 stroke-[2.2]"></i>
@@ -575,13 +634,11 @@
         </button>
 
         <!-- Вкладка 2: Фриланс и Бизнес (ИП + РКО) -->
-        <button
-          id="tab-rko"
-          onclick="switchCategory('rko')"
-          class="tab-btn w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-transparent text-zinc-300 hover:bg-white/5"
-        >
+        <button id="tab-rko" onclick="switchCategory('rko')"
+          class="tab-btn w-full text-left p-4 sm:p-5 rounded-2xl transition-all flex items-center justify-between gap-3 bg-transparent text-zinc-300 hover:bg-white/5">
           <div class="flex items-center gap-3.5">
-            <div class="w-11 h-11 rounded-xl bg-electric/20 text-electricLight flex items-center justify-center shrink-0">
+            <div
+              class="w-11 h-11 rounded-xl bg-electric/20 text-electricLight flex items-center justify-center shrink-0">
               <i data-lucide="briefcase" class="w-6 h-6 stroke-[2.2]"></i>
             </div>
             <div>
@@ -593,7 +650,8 @@
               </div>
             </div>
           </div>
-          <span class="px-2.5 py-1 rounded-lg bg-electric/20 text-electricLight border border-electric/40 font-mono text-xs font-bold shrink-0">
+          <span
+            class="px-2.5 py-1 rounded-lg bg-electric/20 text-electricLight border border-electric/40 font-mono text-xs font-bold shrink-0">
             3 банка
           </span>
         </button>
@@ -601,33 +659,22 @@
 
       <!-- Быстрые теги-фильтры -->
       <div class="flex items-center justify-between gap-4 flex-wrap">
-        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 w-full sm:w-auto" id="tagFiltersContainer">
-          <button
-            onclick="filterByTag('all')"
-            data-tag="all"
-            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-white text-graphite shadow-sm"
-          >
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 w-full sm:w-auto"
+          id="tagFiltersContainer">
+          <button onclick="filterByTag('all')" data-tag="all"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-white text-graphite shadow-sm">
             # Все продукты
           </button>
-          <button
-            onclick="filterByTag('Максимальный кэшбэк')"
-            data-tag="Максимальный кэшбэк"
-            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
-          >
+          <button onclick="filterByTag('Максимальный кэшбэк')" data-tag="Максимальный кэшбэк"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50">
             🔥 Максимальный кэшбэк
           </button>
-          <button
-            onclick="filterByTag('Быстрая доставка')"
-            data-tag="Быстрая доставка"
-            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
-          >
+          <button onclick="filterByTag('Быстрая доставка')" data-tag="Быстрая доставка"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50">
             ⚡ Быстрая доставка
           </button>
-          <button
-            onclick="filterByTag('Для фриланса')"
-            data-tag="Для фриланса"
-            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50"
-          >
+          <button onclick="filterByTag('Для фриланса')" data-tag="Для фриланса"
+            class="tag-filter-btn px-4 py-2 rounded-xl font-mono text-xs font-bold transition-all whitespace-nowrap bg-surface border border-white/10 text-zinc-300 hover:border-lime/50">
             💻 Для фриланса
           </button>
         </div>
@@ -651,7 +698,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Левая колонка: Описание и шпаргалка (4 колонки) -->
         <div class="lg:col-span-4 bento-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold">
             <i data-lucide="book-open" class="w-4 h-4"></i>
             <span>БАЗА ЗНАНИЙ</span>
           </div>
@@ -661,7 +709,8 @@
           </h2>
 
           <p class="text-sm text-zinc-300 leading-relaxed">
-            Собрали короткие инструкции без банковской воды: как выжимать максимум кэшбэка и не платить ни рубля за скрытые опции.
+            Собрали короткие инструкции без банковской воды: как выжимать максимум кэшбэка и не платить ни рубля за
+            скрытые опции.
           </p>
 
           <!-- Интерактивная карточка копирования чек-листа -->
@@ -673,10 +722,8 @@
             <p class="text-xs text-zinc-400">
               Скопируй памятку из 4 шагов в Избранное Telegram, чтобы сразу настроить новую карту за 1 минуту.
             </p>
-            <button
-              onclick="copyChecklist()"
-              class="w-full py-2.5 px-3.5 rounded-xl bg-surfaceLight hover:bg-lime hover:text-graphite border border-white/15 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2"
-            >
+            <button onclick="copyChecklist()"
+              class="w-full py-2.5 px-3.5 rounded-xl bg-surfaceLight hover:bg-lime hover:text-graphite border border-white/15 font-mono text-xs font-bold transition-all flex items-center justify-center gap-2">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span id="copyBtnText">Скопировать чек-лист</span>
             </button>
@@ -687,30 +734,36 @@
         <div class="lg:col-span-8 space-y-4" id="faqAccordionContainer">
           <!-- Вопрос 1 -->
           <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
-            <button
-              onclick="toggleFaq(0)"
+            <button onclick="toggleFaq(0)"
               class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
-              aria-expanded="true"
-            >
+              aria-expanded="true">
               <div class="flex items-center gap-3.5">
-                <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                <span
+                  class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
                   01
                 </span>
-                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                <span
+                  class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
                   Как получать максимум кэшбэка с нескольких карт?
                 </span>
               </div>
-              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-lime transition-transform duration-300 rotate-180 shrink-0">
+              <div
+                class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-lime transition-transform duration-300 rotate-180 shrink-0">
                 <i data-lucide="chevron-down" class="w-5 h-5"></i>
               </div>
             </button>
-            <div class="faq-content px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+            <div
+              class="faq-content px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
               <p class="mb-2">
-                Секрет прост: так как выпуск и обслуживание дебетовых карт из нашей подборки стоят <strong class="text-lime">0 ₽ навсегда</strong>, опытные пользователи оформляют связку из 2–3 карт разных банков.
+                Секрет прост: так как выпуск и обслуживание дебетовых карт из нашей подборки стоят <strong
+                  class="text-lime">0 ₽ навсегда</strong>, опытные пользователи оформляют связку из 2–3 карт разных
+                банков.
               </p>
               <ul class="space-y-1.5 list-disc list-inside text-zinc-300">
-                <li>В 1-е число каждого месяца заходи в приложения банков и выбирай <strong>непересекающиеся категории</strong>.</li>
-                <li>Например: по карте «Альфа-Выгода» ставь 5–7% на Супермаркеты и Кафе, по «Т-Смарт» — Такси и Аптеки, а по «ВТБ-Кэш» или «ПСБ-Банк» — Маркетплейсы и Одежду.</li>
+                <li>В 1-е число каждого месяца заходи в приложения банков и выбирай <strong>непересекающиеся
+                    категории</strong>.</li>
+                <li>Например: по карте «Альфа-Выгода» ставь 5–7% на Супермаркеты и Кафе, по «Т-Смарт» — Такси и Аптеки,
+                  а по «ВТБ-Кэш» или «ПСБ-Банк» — Маркетплейсы и Одежду.</li>
                 <li>Перекидывай деньги между своими картами за секунду через СБП без комиссии прямо перед оплатой.</li>
               </ul>
             </div>
@@ -718,86 +771,102 @@
 
           <!-- Вопрос 2 -->
           <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
-            <button
-              onclick="toggleFaq(1)"
+            <button onclick="toggleFaq(1)"
               class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
               <div class="flex items-center gap-3.5">
-                <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                <span
+                  class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
                   02
                 </span>
-                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                <span
+                  class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
                   Как отключить платные СМС-уведомления после получения?
                 </span>
               </div>
-              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+              <div
+                class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
                 <i data-lucide="chevron-down" class="w-5 h-5"></i>
               </div>
             </button>
-            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+            <div
+              class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
               <p class="mb-2">
-                При курьерской выдаче или активации карты банки часто подключают пакет «СМС-информирование» (обычно 99 ₽/мес со 2-го месяца). Отключить его можно за 20 секунд:
+                При курьерской выдаче или активации карты банки часто подключают пакет «СМС-информирование» (обычно 99
+                ₽/мес со 2-го месяца). Отключить его можно за 20 секунд:
               </p>
               <ol class="space-y-1.5 list-decimal list-inside text-zinc-300">
                 <li>Открой мобильное приложение банка сразу после получения карты.</li>
-                <li>Нажми на иконку карты → перейди в раздел <strong>«Настройки» → «Уведомления об операциях»</strong>.</li>
-                <li>Отключи платный пакет или переключи тумблер на бесплатные Push-уведомления. Все коды 3D-Secure для покупок в интернете всё равно приходят бесплатно по закону!</li>
+                <li>Нажми на иконку карты → перейди в раздел <strong>«Настройки» → «Уведомления об операциях»</strong>.
+                </li>
+                <li>Отключи платный пакет или переключи тумблер на бесплатные Push-уведомления. Все коды 3D-Secure для
+                  покупок в интернете всё равно приходят бесплатно по закону!</li>
               </ol>
             </div>
           </div>
 
           <!-- Вопрос 3 -->
           <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
-            <button
-              onclick="toggleFaq(2)"
+            <button onclick="toggleFaq(2)"
               class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
               <div class="flex items-center gap-3.5">
-                <span class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                <span
+                  class="w-8 h-8 rounded-lg bg-lime/15 border border-lime/40 text-lime font-mono font-bold text-xs flex items-center justify-center shrink-0">
                   03
                 </span>
-                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                <span
+                  class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
                   Зачем фрилансеру расчетный счет и чем удобен режим АУСН?
                 </span>
               </div>
-              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+              <div
+                class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
                 <i data-lucide="chevron-down" class="w-5 h-5"></i>
               </div>
             </button>
-            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+            <div
+              class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
               <p class="mb-2">
-                Если ты берешь заказы у компаний, выходишь на маркетплейсы (Wildberries, Ozon) или перерос лимит самозанятости (2,4 млн ₽ в год), регулярные переводы на обычную физлицо-карту могут вызвать вопросы у финмониторинга по 115-ФЗ.
+                Если ты берешь заказы у компаний, выходишь на маркетплейсы (Wildberries, Ozon) или перерос лимит
+                самозанятости (2,4 млн ₽ в год), регулярные переводы на обычную физлицо-карту могут вызвать вопросы у
+                финмониторинга по 115-ФЗ.
               </p>
               <p>
-                Счет ИП (РКО) решает эту проблему полностью. А налоговый режим <strong class="text-lime">АУСН (Автоматизированная упрощенка)</strong> освобождает от сдачи деклараций, книги учета и уплаты страховых взносов — банк сам считает налог с приходов, а ты просто нажимаешь одну кнопку в приложении.
+                Счет ИП (РКО) решает эту проблему полностью. А налоговый режим <strong class="text-lime">АУСН
+                  (Автоматизированная упрощенка)</strong> освобождает от сдачи деклараций, книги учета и уплаты
+                страховых взносов — банк сам считает налог с приходов, а ты просто нажимаешь одну кнопку в приложении.
               </p>
             </div>
           </div>
 
           <!-- Вопрос 4 -->
           <div class="faq-item bento-card rounded-2xl border border-white/10 overflow-hidden">
-            <button
-              onclick="toggleFaq(3)"
+            <button onclick="toggleFaq(3)"
               class="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
               <div class="flex items-center gap-3.5">
-                <span class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                <span
+                  class="w-8 h-8 rounded-lg bg-electric/20 border border-electric/40 text-electricLight font-mono font-bold text-xs flex items-center justify-center shrink-0">
                   04
                 </span>
-                <span class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
+                <span
+                  class="font-display font-bold text-sm sm:text-lg text-white group-hover:text-lime transition-colors">
                   Безопасно ли оформлять карту онлайн?
                 </span>
               </div>
-              <div class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
+              <div
+                class="faq-icon w-8 h-8 rounded-lg bg-surfaceLight flex items-center justify-center text-zinc-400 transition-transform duration-300 shrink-0">
                 <i data-lucide="chevron-down" class="w-5 h-5"></i>
               </div>
             </button>
-            <div class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
+            <div
+              class="faq-content hidden px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-300 leading-relaxed border-t border-white/5">
               <p>
-                Абсолютно безопасно. Наш ресурс <strong class="text-white">не собирает и не хранит</strong> твои персональные или паспортные данные. При нажатии на кнопку «Оформить на официальном сайте» ты переходишь напрямую на защищенный шлюз выбранного банка с генеральной лицензией ЦБ РФ, где заполняешь стандартную анкету на доставку карты курьером или в ближайшее отделение.
+                Абсолютно безопасно. Наш ресурс <strong class="text-white">не собирает и не хранит</strong> твои
+                персональные или паспортные данные. При нажатии на кнопку «Оформить на официальном сайте» ты переходишь
+                напрямую на защищенный шлюз выбранного банка с генеральной лицензией ЦБ РФ, где заполняешь стандартную
+                анкету на доставку карты курьером или в ближайшее отделение.
               </p>
             </div>
           </div>
@@ -812,9 +881,11 @@
   ========================================================================== -->
   <footer class="relative z-10 border-t border-white/10 bg-surface/90 pt-10 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+      <div
+        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-lime flex items-center justify-center text-graphite font-display font-black text-sm">
+          <div
+            class="w-8 h-8 rounded-lg bg-lime flex items-center justify-center text-graphite font-display font-black text-sm">
             FC
           </div>
           <span class="font-display font-bold text-base tracking-tight">
@@ -830,13 +901,17 @@
       </div>
 
       <!-- Обязательный юридический текст-дисклеймер -->
-      <div class="p-4 sm:p-5 rounded-2xl bg-graphite/80 border border-white/5 text-xs text-zinc-400 leading-relaxed space-y-2">
+      <div
+        class="p-4 sm:p-5 rounded-2xl bg-graphite/80 border border-white/5 text-xs text-zinc-400 leading-relaxed space-y-2">
         <p class="font-medium text-zinc-300 flex items-center gap-1.5">
           <i data-lucide="info" class="w-4 h-4 text-lime shrink-0"></i>
           <span>Правовая информация и дисклеймер:</span>
         </p>
         <p>
-          Информационный ресурс. Сайт не является банком или финансовой организацией и предоставляет справочную информацию для сравнения условий банковских продуктов. Все заявки оформляются непосредственно на официальных сайтах банков с лицензией ЦБ РФ. Условия начисления кэшбэка, процентных ставок и тарифов РКО определяются правилами соответствующих кредитных организаций и могут отличаться в зависимости от выбранных категорий. 18+.
+          Информационный ресурс. Сайт не является банком или финансовой организацией и предоставляет справочную
+          информацию для сравнения условий банковских продуктов. Все заявки оформляются непосредственно на официальных
+          сайтах банков с лицензией ЦБ РФ. Условия начисления кэшбэка, процентных ставок и тарифов РКО определяются
+          правилами соответствующих кредитных организаций и могут отличаться в зависимости от выбранных категорий. 18+.
         </p>
       </div>
     </div>
@@ -846,12 +921,15 @@
        МОДАЛЬНОЕ ОКНО: СХЕМА СВЯЗКИ КАРТ + TOAST-УВЕДОМЛЕНИЕ
   ========================================================================== -->
   <div id="comboModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-md">
-    <div class="bento-card rounded-3xl max-w-lg w-full p-6 sm:p-8 border-2 border-lime shadow-neo-purple relative animate-fade-in">
-      <button onclick="closeComboModal()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-surfaceLight hover:bg-white/15 flex items-center justify-center text-zinc-300">
+    <div
+      class="bento-card rounded-3xl max-w-lg w-full p-6 sm:p-8 border-2 border-lime shadow-neo-purple relative animate-fade-in">
+      <button onclick="closeComboModal()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-surfaceLight hover:bg-white/15 flex items-center justify-center text-zinc-300">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold mb-3">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime/15 text-lime font-mono text-xs font-bold mb-3">
         <i data-lucide="zap" class="w-3.5 h-3.5"></i>
         <span>ЗОЛОТАЯ СВЯЗКА СТУДЕНТА И ФРИЛАНСЕРА</span>
       </div>
@@ -863,11 +941,13 @@
       <div class="space-y-3 text-sm text-zinc-300">
         <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
           <span class="font-mono font-bold text-lime block">Карта №1: Альфа-Выгода (База)</span>
-          <p class="text-xs text-zinc-400 mt-1">Используй для супермаркетов, фастфуда и крути барабан суперкэшбэка до 100% каждую пятницу.</p>
+          <p class="text-xs text-zinc-400 mt-1">Используй для супермаркетов, фастфуда и крути барабан суперкэшбэка до
+            100% каждую пятницу.</p>
         </div>
         <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
           <span class="font-mono font-bold text-electricLight block">Карта №2: Т-Смарт (Сервисы и Город)</span>
-          <p class="text-xs text-zinc-400 mt-1">Выбирай 4 категории месяца (такси, аптеки, кино, подписки) + 0 ₽ переводы и удобная кубышка.</p>
+          <p class="text-xs text-zinc-400 mt-1">Выбирай 4 категории месяца (такси, аптеки, кино, подписки) + 0 ₽
+            переводы и удобная кубышка.</p>
         </div>
         <div class="p-3.5 rounded-2xl bg-graphite border border-white/10">
           <span class="font-mono font-bold text-sky-400 block">Карта №3: ПСБ-Банк / ВТБ-Кэш</span>
@@ -875,14 +955,16 @@
         </div>
       </div>
 
-      <button onclick="closeComboModal(); document.getElementById('offers').scrollIntoView({behavior: 'smooth'});" class="w-full mt-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm shadow-neo-purple hover:bg-limeDark transition-all">
+      <button onclick="closeComboModal(); document.getElementById('offers').scrollIntoView({behavior: 'smooth'});"
+        class="w-full mt-6 py-3.5 rounded-2xl bg-lime text-graphite font-extrabold text-sm shadow-neo-purple hover:bg-limeDark transition-all">
         Перейти к оформлению связки
       </button>
     </div>
   </div>
 
   <!-- Всплывающее уведомление (Toast) вместо alert() -->
-  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm">
+  <div id="toastNotification"
+    class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-sm">
     <div class="px-5 py-3.5 rounded-2xl bg-graphite border-2 border-lime shadow-neo-purple flex items-center gap-3">
       <div class="w-8 h-8 rounded-lg bg-lime text-graphite flex items-center justify-center shrink-0">
         <i data-lucide="check" class="w-5 h-5 stroke-[2.5]"></i>
@@ -1570,4 +1652,5 @@
     });
   </script>
 </body>
+
 </html>
