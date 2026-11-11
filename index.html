@@ -1398,15 +1398,18 @@
       }
 
       updateTagButtonsUI();
-      // Обновляем карточки и плавно скроллим к ним
       renderOffers();
-      const grid = document.getElementById('offers-grid');
-      if (grid) {
-        window.scrollTo({
-          top: grid.getBoundingClientRect().top + window.scrollY - 30,
-          behavior: 'smooth'
-        });
-      }
+
+      // Даем браузеру долю секунды на отрисовку новых карточек, затем плавно скроллим к вкладкам
+      setTimeout(() => {
+        const scrollToTarget = document.getElementById('tab-debit');
+        if (scrollToTarget) {
+          window.scrollTo({
+            top: scrollToTarget.getBoundingClientRect().top + window.scrollY - 10,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
     }
 
     function filterByTag(tag) {
