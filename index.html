@@ -1323,7 +1323,7 @@
               </div>
 
               <!-- Мини-визуал банковской карты в стиле Neo-Brutalism -->
-              <div class="p-4 rounded-2xl bg-gradient-to-br ${offer.cardGradient} border border-white/20 shadow-lg relative overflow-hidden">
+              <a href="${offer.url}" target="_blank" rel="noopener noreferrer" class="block cursor-pointer transition-transform hover:-translate-y-1 p-4 rounded-2xl bg-gradient-to-br ${offer.cardGradient} border border-white/20 shadow-lg relative overflow-hidden">
                 <div class="flex items-center justify-between text-xs font-mono text-white/90">
                   <span class="font-bold tracking-wider">${offer.cardCode}</span>
                   <i data-lucide="wifi" class="w-4 h-4 rotate-90 opacity-80"></i>
@@ -1338,7 +1338,7 @@
                     <div class="w-4 h-3 rounded-sm border border-white/60"></div>
                   </div>
                 </div>
-              </div>
+              </a>
 
               <!-- Краткое описание -->
               <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
@@ -1398,7 +1398,15 @@
       }
 
       updateTagButtonsUI();
+      // Обновляем карточки и плавно скроллим к ним
       renderOffers();
+      const grid = document.getElementById('offers-grid');
+      if (grid) {
+        window.scrollTo({
+          top: grid.getBoundingClientRect().top + window.scrollY - 30,
+          behavior: 'smooth'
+        });
+      }
     }
 
     function filterByTag(tag) {
